@@ -17,6 +17,6 @@
     shell: |
       cd cicd
       kubectl apply -f Deployment.yml
-      kubectl apply -f service.yml
+      kubectl apply -f Service.yml
       cd ~
       kubectl get svc
