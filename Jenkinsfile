@@ -21,6 +21,9 @@ pipeline{
             steps{
                 withSonarQubeEnv('sonar'){
                    sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.6.0.1398:sonar'
+			catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                sh "exit 1"
+                  }
                 }
             }
 			}
