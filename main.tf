@@ -3,11 +3,9 @@ provider "aws" {
     region = "us-east-2"
 }
 
-
-
 resource "aws_key_pair" "main" {
     key_name      = "publickey"
-  public_key      = "${file("var.public_key_file")}"
+  public_key      = "/home/ubuntu/.ssh/id_rsa.pub"
 
 }
 resource "aws_instance" "k8Master"{
