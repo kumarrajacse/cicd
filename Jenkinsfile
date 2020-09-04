@@ -71,9 +71,9 @@ pipeline{
              sleep 30
             sh script:"""
             
-            ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -u ubuntu  -i ~/workspace/ci-cd/inventory --private-key=/home/ubuntu/.ssh/id_rsa Installingdocker.yml
-            ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -u ubuntu  -i ~/workspace/ci-cd/inventory --private-key=/home/ubuntu/.ssh/id_rsa installingk8.yml -v
-            ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -u ubuntu  -i ~/workspace/ci-cd/inventory --private-key=/home/ubuntu/.ssh/id_rsa Deploymentk8.yml 
+            ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -u ubuntu  -i ~/workspace/ci-cd/inventory --private-key=/home/ubuntu/key Installingdocker.yml
+            ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -u ubuntu  -i ~/workspace/ci-cd/inventory --private-key=/home/ubuntu/key installingk8.yml -v
+            ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -u ubuntu  -i ~/workspace/ci-cd/inventory --private-key=/home/ubuntu/key Deploymentk8.yml 
             """
            sleep 30
 		   }
