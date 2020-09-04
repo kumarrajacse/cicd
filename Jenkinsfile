@@ -74,22 +74,9 @@ pipeline{
            sleep 30
 		   }
         } 
-       /* stage('Destroying the infrastructure using terraform') 
-          {
-           withCredentials([string(credentialsId: 'aws-access-key', variable: 'AWS_ACCESS_KEY_ID'),
-                      string(credentialsId: 'aws-secret-key', variable: 'AWS_SECRET_ACCESS_KEY')])
-           {
-            
-           sh script: """
-           
-           terraform destroy -auto-approve
-           rm -rf inventory
-           """       
-         }
-        }*/
+       
      }
 	
     }
-}
-}
+
 
