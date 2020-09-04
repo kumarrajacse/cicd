@@ -7,7 +7,7 @@ provider "aws" {
 
 resource "aws_key_pair" "main" {
     key_name      = "publickey"
-  public_key      = file(var.public_key_file)
+  public_key      = "${file("var.public_key_file")}"
 
 }
 resource "aws_instance" "k8Master"{
