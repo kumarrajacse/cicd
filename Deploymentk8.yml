@@ -1,0 +1,22 @@
+---
+- hosts: master
+  become_user: ubuntu
+  tasks:
+  - name: showing the output
+    shell: |
+       kubectl get nodes
+       kubectl get nodes -o wide
+- hosts: master
+  become_user: ubuntu
+  tasks:
+  - name: cloning the repo
+    git:
+      repo: https://github.com/kumarrajacse/cicd.git
+      dest: /home/ubuntu/cicd
+  - name: executing the kubectl commands
+    shell: |
+      cd cicd
+      kubectl apply -f Deployment.yml
+      kubectl apply -f service.yml
+      cd ~
+      kubectl get svc
