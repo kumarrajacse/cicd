@@ -20,11 +20,7 @@ pipeline{
         stage('SonarQube analysis') {
             steps{
                 withSonarQubeEnv('sonar'){
-                   
-			catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-				sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.6.0.1398:sonar'
-                sh "exit 1"
-                  }
+                   sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.6.0.1398:sonar'
                 }
             }
 			}
