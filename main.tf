@@ -4,8 +4,9 @@ provider "aws" {
 }
 
 resource "aws_key_pair" "main" {
-    key_name      = "publickey" 
-  public_key      = file(var.public_key_file)
+    key_name      = "publickey"
+  public_key      = "/home/ubuntu/pubkey"
+
 }
 resource "aws_instance" "k8Master"{
    ami                              = "ami-0bbe28eb2173f6167"
