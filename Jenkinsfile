@@ -76,6 +76,11 @@ pipeline{
         } 
        
      }
+	post {
+        always {
+            cleanWs()
+        }
+    }
 	
     }
 
